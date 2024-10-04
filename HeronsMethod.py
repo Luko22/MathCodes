@@ -14,17 +14,33 @@ def HeronsMethod(a, x0):
         Xn1 = 1/2*(Xn + a/Xn)
         return Xn1
 
-a = 2
-x0 = 1
-d = 5
+# a = 2
+# x0 = 1
+# d = 5
 
-print("Square Root of", a, "is:",round(math.sqrt(a),5), "using",d, "decimal places") 
+an = input("Enter a number to find the square root: ")
+# print(an)
+a=int(an)
+
+x = input("Enter an initial guess for the square root: ")
+# print(x)
+x0=int(x)
+
+dP = input("Enter the number of decimal places to compute: ")
+# print(d)
+d=int(dP)
+
 print()
 
+
+print("Square Root of", a, "is:", round(math.sqrt(a),d), "up to",d, "decimal places") 
+print()
+
+
 print("Herons Method computations")
-print("X 0 =", x0)
+print("X 0 =", x)
 for i in range(d):
-    x0 = round(HeronsMethod(a, x0),5)
+    x0 = round(HeronsMethod(a, x0),d)
     print("X",i+1,"=",x0)
     
 
